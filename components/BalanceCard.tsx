@@ -35,12 +35,12 @@ export default function BalanceCard({ tokenAddress }: Props) {
         <Card p={4} width={"100%"} height={"100%"} border={"2px solid"} borderColor={"gray.100"}>
             {!isContractMetadataLoading ? (
                 <Stack textAlign={"center"}>
-                    <Text fontWeight={"bold"} fontSize={"2xl"}>{contractMetadata.symbol}</Text>
+                    {/* Use optional chaining to safely access properties */}
+                    <Text fontWeight={"bold"} fontSize={"2xl"}>{contractMetadata?.symbol}</Text>
                     <Text>Balance:</Text>
                     {!isTokenBalanceLoading ? (
                         <>
                             <Text fontSize={"3xl"} fontWeight={"bold"}>{tokenBalance?.displayValue}</Text>
-                            {/* Include MediaRenderer component here */}
                             <MediaRenderer
                                 src={CLAIM_TOKEN_IMAGE}
                                 height="100%"

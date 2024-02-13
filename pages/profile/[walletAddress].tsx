@@ -1,4 +1,4 @@
-import { Avatar, Container, Flex, Heading, SimpleGrid, Spinner, Text, MediaRenderer } from "@chakra-ui/react";
+import { Avatar, Container, Flex, Heading, SimpleGrid, Spinner, Text } from "@chakra-ui/react";
 import { useAddress, useContract, useContractRead } from "@thirdweb-dev/react";
 import { TRANSFER_CONTRACT_ADDRESS, CLAIM_TOKEN_IMAGE } from "../../const/addresses";
 import BalanceCard from "../../components/BalanceCard";

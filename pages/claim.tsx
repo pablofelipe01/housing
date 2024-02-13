@@ -1,8 +1,10 @@
+// Import the necessary components and types
 import { Box, Container, Flex, Heading, SimpleGrid, Stack, Text, useToast, Select } from "@chakra-ui/react";
 import { MediaRenderer, Web3Button, useContract, useContractMetadata } from "@thirdweb-dev/react";
 import { CALIM_TOKEN_CONTRACT_ADDRESS, CLAIM_TOKEN_IMAGE } from "../const/addresses";
-import { useState } from "react";
+import { useState, ChangeEvent } from "react"; // Import ChangeEvent type
 
+// Define the component
 export default function ClaimPage() {
     const {
         contract
@@ -12,15 +14,16 @@ export default function ClaimPage() {
         data: contractMetadata
     } = useContractMetadata(contract);
 
-    const [claimAmount, setClaimAmount] = useState(1);
+    const [claimAmount, setClaimAmount] = useState<number>(1); // Explicitly set the type to number
     const toast = useToast();
 
-    const handleClaimAmountChange = (event) => {
+    // Handle the change event with explicit types
+    const handleClaimAmountChange = (event: ChangeEvent<HTMLSelectElement>) => {
         setClaimAmount(parseInt(event.target.value, 10));
     };
 
     return (
-        <Container maxW={"1440px"} h={"80vh"} >
+        <Container maxW={"1440px"} h={"80vh"}>
             <SimpleGrid columns={2} spacing={10} h={"100%"}>
                 <Flex>
                     <MediaRenderer
@@ -36,9 +39,9 @@ export default function ClaimPage() {
                         <Text fontWeight={"bold"}>Buy {claimAmount} ${contractMetadata?.symbol} Tokens</Text>
                         <Box>
                             <Select value={claimAmount} onChange={handleClaimAmountChange}>
-                                {[...Array(10).keys()].map((value) => (
-                                    <option key={value + 1} value={value + 1}>
-                                        {value + 1}
+                                {Array.from({ length: 10 }, (_, index) => index + 1).map((value) => (
+                                    <option key={value} value={value}>
+                                        {value}
                                     </option>
                                 ))}
                             </Select>
@@ -58,7 +61,6 @@ export default function ClaimPage() {
                     </Stack>
                 </Flex>
             </SimpleGrid>
-            
         </Container>
-    )
+    );
 }
