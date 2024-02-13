@@ -5,7 +5,7 @@ export default function Footer() {
         <Container maxW={"100%"} mt={20} height={"100px"}>
             <Divider />
             <Container maxW={"1440px"} py={8}>
-                <Text>Footer, 01</Text>
+                <Text>Footer</Text>
             </Container>
         </Container>
     );
