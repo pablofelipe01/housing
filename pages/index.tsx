@@ -9,19 +9,19 @@ import Events from "../components/Events";
 const Home: NextPage = () => {
   return (
     <Container maxW={"1440px"}>
-      <Flex h={"75vh"} px={20} borderRadius={20} >
+      <Flex h={"75vh"} px={20} borderRadius={20}>
         <Flex flexDirection={"row"}>
           <Flex flexDirection={"column"} justifyContent={"center"} w={"60%"}>
             <Stack spacing={4}>
               <Heading fontSize={"xl"}>Token housing App</Heading>
               <Heading fontSize={"6xl"}>
-              Revolutionizing Real Estate Investment.
+                Revolutionizing Real Estate Investment.
               </Heading>
               <Text fontSize={"xl"}>
-              Unleashing Unprecedented Opportunities with Our Unique Real-World Asset (RWA) Tokenization Model!
+                Unleashing Unprecedented Opportunities with Our Unique Real-World Asset (RWA) Tokenization Model!
               </Text>
-              <Link href={"/transfer"}>
-                <Button w={"80%"}>Make a Transfer</Button>
+              <Link href={"/claim"} passHref>
+                <Button w={"80%"}>Invest</Button>
               </Link>
             </Stack>
           </Flex>
@@ -46,19 +46,31 @@ const Home: NextPage = () => {
           <Stack spacing={4}>
             <FeatureCard
               step={"01"}
-              title={"Select a Token"}
-              description={"Select from a list of verified tokens from the drop down to send to your friends and family."}
+              title={"Navigate to the Wallet Connection Option"}
+              description={"On our platform, locate and click on the -Connect Wallet- button. This is typically found at the top right corner of the homepage."}
             />
             <FeatureCard
               step={"02"}
-              title={"Who to Send To"}
-              description={"Enter the wallet address of the person you want to send the token to. This is non-reversible so make sure you have the right address."}
+              title={"Select Your Wallet Provider"}
+              description={"A list of supported digital wallet providers will appear. Choose the one that corresponds to your existing wallet."}
             />
             <FeatureCard
               step={"03"}
-              title={"Write a Message"}
-              description={"Write a message to go along with your token transfer. This is optional but it's always nice to send a message to your friends and family."}
+              title={"Confirmation"}
+              description={"Once successfully connected, you will receive a confirmation message. Your wallet is now linked, and you can start engaging with our platform's features and services."}
             />
+           <Link href="/newWallet" passHref>
+  <FeatureCard
+    step={"04"}
+    title={"If You Don't Have a Token Wallet"}
+    description={
+      <span>
+        Don`t worry if you`re new to the world of digital tokens and don`t have a wallet yet. <strong style={{ textDecoration: 'underline' }}>CLICK HERE</strong> Setting one up is straightforward, and we`ll guide you through the process.
+      </span>
+    }
+  />
+</Link>
+
           </Stack>
         </Flex>
       </SimpleGrid>

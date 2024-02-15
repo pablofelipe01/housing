@@ -19,26 +19,27 @@ import Footer from "../components/Footer";
 // You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
 const activeChain = "polygon";
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider
       clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
       activeChain={activeChain}
       supportedWallets={[
+        coinbaseWallet({ recommended: true }),
         metamaskWallet(),
-        coinbaseWallet(),
         walletConnect(),
-        localWallet(),
-        embeddedWallet({
-          auth: {
-            options: [
-              "email",
-              "google",
-              "apple",
-              "facebook",
-            ],
-          },
-        }),
+        // localWallet(),
+        // embeddedWallet({
+        //   auth: {
+        //     options: [
+        //       "email",
+        //       "google",
+        //       "apple",
+        //       "facebook",
+        //     ],
+        //   },
+        // }),
       ]}
     >
       <ChakraProvider>
