@@ -29,6 +29,7 @@ export default function Navbar() {
                 )}
                 <ConnectWallet 
                      theme={"dark"}
+                     switchToActiveChain={true}
                      modalSize={"compact"}
                      welcomeScreen={{
                          img: {
