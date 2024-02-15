@@ -61,7 +61,7 @@ const Home: NextPage = () => {
             />
            <Link href="/newWallet" passHref>
   <FeatureCard
-    step={"04"}
+    step={"New  User"}
     title={"If You Don't Have a Token Wallet"}
     description={
       <span>
