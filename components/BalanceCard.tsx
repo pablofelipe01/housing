@@ -47,7 +47,7 @@ export default function BalanceCard({ tokenAddress }: Props) {
                                 width="100%"
                             />
                             {/* Include the link here */}
-                            <Link href="https://app.aragon.org/#/daos/polygon/0x331f347e4fb786a33b5983eccd8a96c222b52d3f/governance/proposals/0xb418e165e4f53c50f3f935d2de80c50e4cd7a643_0x2" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://app.aragon.org/#/daos/polygon/0x331f347e4fb786a33b5983eccd8a96c222b52d3f/governance/proposals/0xb418e165e4f53c50f3f935d2de80c50e4cd7a643_0x3" target="_blank" rel="noopener noreferrer">
                                 Property Documents
                             </Link>
                         </>
